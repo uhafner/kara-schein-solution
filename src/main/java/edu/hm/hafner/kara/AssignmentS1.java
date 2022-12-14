@@ -34,15 +34,19 @@ public class AssignmentS1 {
      *         damit die automatisierte Auswertung der Ergebnisse funktioniert.
      */
     public static void main(final String... unused) {
-        var width = computeWidth();
-        for (int i = 0; i < width / 2; i++) {
-            draw(width / 2);
-            walk(width / 2);
+        var size = computeWidth();
+
+        var width = askNumber("Breite erstes Rechteck: ");
+        var height = askNumber("Höhe erstes Rechteck: ");
+
+        for (int i = 0; i < height; i++) {
+            draw(width);
+            walk(size - width);
             moveDown();
         }
-        for (int i = 0; i < width / 2; i++) {
-            walk(width / 2);
-            draw(width / 2);
+        for (int i = 0; i < size - height; i++) {
+            walk(width);
+            draw(size - width);
             moveDown();
         }
     }
