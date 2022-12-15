@@ -24,15 +24,17 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-== 1. Malen von Vierecken (Schleifen und Algorithmik)
+== 1. Malen von Vierecken (Schleifen und Algorithmik) - Assignment1Draw
 
 Damit der Start leichter fällt, ist die erste Aufgabe in zwei Teilschritte aufgeteilt. Sie können wahlweise mit Aufgabe 1a starten und dann den Code so verbessern, dass er auch Aufgabe 1b erfüllt. Wenn Sie sich fit genug fühlen, können Sie aber auch gleich zur Aufgabe 1b übergeben, und die generelle Lösung des Problems angehen. Die bereitgestellten Testfälle gelten für beide Teilaufgaben.
 
 === 1a. Malen von Quadranten
 
-Schreiben Sie ein Programm für Kara, das eine leere quadratische Welt in vier gleich große Quadranten unterteilt (also in vier gleich große Quadrate). Damit das Teilen ohne Rest funktioniert, sind Breite und Höhe jeder Welt immer eine gerade Zahl, also 2x2, 4x4, 6x6, etc. Damit das gleiche Programm auch in Aufgabe 1b funktioniert, ist die Abfrage nach Höhe und Breite bereits vorprogrammiert, in Aufgabe 1a können Sie diese Werte zunächst ignorieren und einfach die Hälfte der Breite bzw. Höhe annehmen.
+Schreiben Sie ein Programm für Kara, das in einer leeren quadratischen Welt den linken oberen und den rechten unteren von den vier vorhandenen Quadranten jeweils mit Blättern ausfüllt. Die 4 gleich großen Quadrate entstehen durch Halbieren der Höhe und Halbieren der Breite. Damit das Teilen ohne Rest funktioniert, sind Breite und Höhe jeder Welt immer eine gerade Zahl, also 2x2, 4x4, 6x6, etc. Damit das gleiche Programm auch in Aufgabe 1b funktioniert, ist das Öffnen des Dialogs zur Abfrage nach Höhe und Breite bereits vorprogrammiert. In Aufgabe 1a können Sie diese Werte zunächst ignorieren und einfach die Hälfte der Breite bzw. Höhe annehmen.
 
 Die Berechnung der Weltgröße ist bereits vorgegeben. Die Position von Kara am Ende des Programms ist egal und wird nicht überprüft.
+
+In den folgenden Bildern sehen Sie, wie die 4 Quadranten entstehen: der linke obere und der rechte untere Quadrant sind jeweils mit Blättern gefüllt.
 
 .Ausgangssituation XS (links) und erwartetes Ergebnis (rechts)
 image:images/1-XS-Start.png[Ausgangssituation, width=30%, pdfwidth=30%]
@@ -65,9 +67,9 @@ image:images/1-XL-Start.png[Ausgangssituation, width=30%, pdfwidth=30%]
 image:images/right-arrow.png[width=10%, pdfwidth=10%]
 image:images/1-XL-7-1.png[erwarteten Ergebnis, width=30%, pdfwidth=30%]
 
-== 2. Zerlegen von Dezimalzahlen (Thema: Schleifen und Rechnen)
+== 2. Zerlegen von Dezimalzahlen (Thema: Schleifen und Rechnen) - Assignment2Digits
 
-Kara soll nicht negative Dezimalzahlen im Bereit 0-999999 in Karas Welt zeichnen. Es gibt nur eine Welt in diese Aufgabe: Die Welt ist komplett leer und hat eine Breite von 6 (für jede Dezimalstelle eine Spalte) und eine Höhe von 9 (für die Darstellung der Ziffern 0 bis 9). Jede Dezimalstelle der jeweils einzugebenden Zahl muss in eine Spalte mit 0 bis 9 Blättern dargestellt werden. Das Auftragen der Blätter startet von unten, Lücken sind nicht erlaubt. Ganz links ist die höherwertigste Dezimalstelle, ganz rechts die niederwertigste angeordnet. Nicht benötigte Dezimalstellen bleiben leer. Stellen Sie außerdem sicher, dass bei einer Eingabe von Zahlen > 999999 oder < 0 nichts gemalt wird.
+Kara soll nicht negative Dezimalzahlen im Bereit 0-999999 in Karas Welt zeichnen. Es gibt nur eine Welt in diese Aufgabe: Die Welt ist komplett leer und hat eine Breite von 6 (für jede Dezimalstelle eine Spalte) und eine Höhe von 9 (für die Darstellung der Ziffern 0 bis 9). Jede Dezimalstelle der jeweils einzugebenden Zahl muss in eine Spalte mit 0 bis 9 Blättern dargestellt werden. Das Auftragen der Blätter startet von unten, Lücken sind nicht erlaubt. Ganz links ist die höchstwertige Dezimalstelle, ganz rechts die niederwertigste angeordnet. Nicht benötigte Dezimalstellen bleiben leer. Stellen Sie außerdem sicher, dass bei einer Eingabe von Zahlen > 999999 oder < 0 nichts gemalt wird. Die Position von Kara am Ende des Programms ist egal und wird nicht überprüft.
 
 Beispiele:
 
@@ -82,9 +84,9 @@ image:images/2-123.png[Ausgangssituation, width=20%, pdfwidth=20%]
 image:images/2-21212.png[Ausgangssituation, width=20%, pdfwidth=20%]
 image:images/2-987654.png[Ausgangssituation, width=20%, pdfwidth=20%]
 
-== 3. Finden von Mustern (Thema: Arrays)
+== 3. Finden von Mustern (Thema: Arrays) - Assignment3Search
 
-Kara soll ein Muster aus Blättern in einer Zeile der vorgegebenen Welt finden. Die Welt ist dabei wie folgt aufgebaut: Sie ist immer gleich hoch, aber beliebig breit. Die gesamte Welt ist mit Bäumen umrandet. Das zu suchenden Muster ist in der obersten begehbaren Zeile der Welt aufgetragen. Die unterste begehbare Zeile enthält dann den Ausschnitt, in dem nach dem Muster gesucht werden soll. Die Länge des zu suchenden Musters wird durch Pilze links und rechts daneben eingegrenzt. Ebenso der Bereich, in dem das Muster gesucht werden soll. Kara selbst steht in der Mitte zwischen diesen beiden Zeilen. Die mittlere Zeile ist sonst mit Bäumen gefüllt, um die obere von der unteren Zeile visuell zu trennen.
+Kara soll ein Muster aus Blättern in einer Zeile der vorgegebenen Welt finden. Die Welt ist dabei wie folgt aufgebaut: Sie ist immer gleich hoch, aber beliebig breit. Die gesamte Welt ist mit Bäumen umrandet. Das zu suchenden Muster ist in der obersten begehbaren Zeile der Welt aufgetragen. Die unterste begehbare Zeile enthält dann den Ausschnitt, in dem nach dem Muster gesucht werden soll. Die Länge des zu suchenden Musters wird durch Pilze links und rechts daneben eingegrenzt. Ebenso der Bereich, in dem das Muster gesucht werden soll. Kara selbst steht in der Mitte zwischen diesen beiden Zeilen. Die mittlere Zeile ist sonst mit Bäumen gefüllt, um die obere von der unteren Zeile visuell zu trennen. Die Position von Kara am Ende des Programms ist egal und wird nicht überprüft.
 
 Beispiele:
 

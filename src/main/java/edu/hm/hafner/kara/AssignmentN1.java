@@ -7,8 +7,6 @@ import static de.i8k.karalight.Kara.*;
  */
 public class AssignmentN1 {
 
-    private static final int MAXIMUM_DISPLAY = 1_000_000;
-
     /**
      * Die {@code main} Methode ist der Ausgangspunkt für KaraLight. Hier wird direkt in Java programmiert, folgende
      * Kara-Befehle können verwendet werden, um Kara zu steuern:
@@ -39,7 +37,7 @@ public class AssignmentN1 {
     public static void main(final String... unused) {
         var number = askNumber("Geben Sie eine Zahl zwischen 0 un 1.000.000 - 1 ein:");
 
-        if (number > 0 && number < MAXIMUM_DISPLAY) {
+        if (number > 0 && number < 1_000_000) {
             turnLeft();
             move();
             turnLeft();
