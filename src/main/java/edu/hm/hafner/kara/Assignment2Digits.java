@@ -5,7 +5,7 @@ import static de.i8k.karalight.Kara.*;
 /**
  * KaraLight: Leere Vorlage für die elektronische Prüfung zum Scheinerwerb.
  */
-public class AssignmentN1 {
+public class Assignment2Digits {
 
     /**
      * Die {@code main} Methode ist der Ausgangspunkt für KaraLight. Hier wird direkt in Java programmiert, folgende

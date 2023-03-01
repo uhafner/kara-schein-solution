@@ -5,7 +5,7 @@ import static de.i8k.karalight.Kara.*;
 /**
  * KaraLight: Leere Vorlage für die elektronische Prüfung zum Scheinerwerb.
  */
-public class AssignmentA1 {
+public class Assignment3Search {
     static final String MUSTER_GEFUNDEN = "Yippie! Muster gefunden!";
     static final String MUSTER_NICHT_GEFUNDEN = "Muster leider nicht gefunden :-(";
 

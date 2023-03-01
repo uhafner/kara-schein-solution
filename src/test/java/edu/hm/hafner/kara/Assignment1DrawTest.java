@@ -16,7 +16,7 @@ import de.i8k.karalight.world.World;
 
 import static org.assertj.core.api.Assertions.*;
 
-class AssignmentS1Test extends AbstractKaraTest {
+class Assignment1DrawTest extends AbstractKaraTest {
     @MethodSource
     @ParameterizedTest(name = "{index} => {0} ({1})")
     @DisplayName("Fülle die Quadranten oben links und rechts unten")
@@ -28,14 +28,15 @@ class AssignmentS1Test extends AbstractKaraTest {
 
         Kara.setController(controller);
 
-        AssignmentS1.main();
+        Assignment1Draw.main();
 
         assertThat(start.getRepresentation(RepresentationMode.NONE))
+                .as("Fülle die Quadranten oben links und rechts unten: %s", start.getName())
                 .isEqualTo(expected.getRepresentation(RepresentationMode.NONE));
     }
 
     static Stream<Arguments> shouldSolveAssignment1a() {
-        return createStreamOfWorlds("S1-XS", "S1-S", "S1-M", "S1-L", "S1-XL");
+        return createStreamOfWorlds("1Draw-XS", "1Draw-S", "1Draw-M", "1Draw-L", "1Draw-XL", "1Draw-XXL");
     }
 
     @MethodSource
@@ -50,16 +51,18 @@ class AssignmentS1Test extends AbstractKaraTest {
 
         Kara.setController(controller);
 
-        AssignmentS1.main();
+        Assignment1Draw.main();
 
-        assertThat(start.getRepresentation(RepresentationMode.NONE)).isEqualTo(
-                new World(String.format("Expected%s-%d-%d.world", name, width, height)).getRepresentation(RepresentationMode.NONE));
+        assertThat(start.getRepresentation(RepresentationMode.NONE))
+                .as("Male nacheinander zwei gefüllte Rechtecke der Größe %d%d: %s", width, height, start.getName())
+                .isEqualTo(new World(String.format("Expected%s-%d-%d.world", name, width, height)).getRepresentation(RepresentationMode.NONE));
     }
 
     static Stream<Arguments> shouldSolveAssignment1b() {
         return Stream.of(
-                Arguments.of("S1-XL", 2, 6),
-                Arguments.of("S1-XL", 7, 1)
+                Arguments.of("1Draw-XL", 2, 6),
+                Arguments.of("1Draw-XXL", 1, 11),
+                Arguments.of("1Draw-XL", 7, 1)
         );
     }
 }

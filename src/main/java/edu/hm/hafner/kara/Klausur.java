@@ -5,7 +5,7 @@ import static de.i8k.karalight.Kara.*;
 /**
  * KaraLight: Leere Vorlage für die elektronische Prüfung zum Scheinerwerb.
  */
-public class AssignmentS1 {
+public class Klausur {
     /**
      * Die {@code main} Methode ist der Ausgangspunkt für KaraLight. Hier wird direkt in Java programmiert, folgende
      * Kara-Befehle können verwendet werden, um Kara zu steuern:
@@ -34,52 +34,29 @@ public class AssignmentS1 {
      *         damit die automatisierte Auswertung der Ergebnisse funktioniert.
      */
     public static void main(final String... unused) {
-        var size = computeWidth();
-
-        var width = askNumber("Breite erstes Rechteck: ");
-        var height = askNumber("Höhe erstes Rechteck: ");
-
-        for (int i = 0; i < height; i++) {
-            draw(width);
-            walk(size - width);
-            moveDown();
-        }
-        for (int i = 0; i < size - height; i++) {
-            walk(width);
-            draw(size - width);
-            moveDown();
-        }
-    }
-
-    static void moveDown() {
-        turnRight();
-        move();
-        turnLeft();
-    }
-
-    private static void draw(final int steps) {
-        for (int i = 0; i < steps; i++) {
+        while (!isOnLeaf()) {
             putLeaf();
             move();
+            turnRight();
+            move();
+            turnLeft();
+        }
+        turnLeft();
+        turnLeft();
+        move();
+        int isOnLeaf = 0;
+        while (isOnLeaf < 2) {
+            if (isOnLeaf()) {
+                isOnLeaf++;
+            }
+            else {
+                putLeaf();
+            }
+            move();
+            turnLeft();
+            move();
+            turnRight();
         }
     }
 
-    private static void walk(final int steps) {
-        for (int i = 0; i < steps; i++) {
-            move();
-        }
-    }
-
-    private static int computeWidth() {
-        int width = 0;
-
-        putLeaf();
-        do {
-            move();
-            width++;
-        } while (!isOnLeaf());
-        pickLeaf();
-
-        return width;
-    }
 }

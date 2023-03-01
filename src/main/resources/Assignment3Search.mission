@@ -1,0 +1,8 @@
+Finde ein Muster
+Kara soll ein Muster aus Blättern und leeren Stellen im vorgegeben Weg finden. Das zu suchenden Muster muss aus der oberen Zeile ausgelesen werden und im Weg unten gesucht werden.
+Assignment3Search-3-treffer-start.world
+Assignment3Search-3-treffer-mitte.world
+Assignment3Search-3-treffer-ende.world
+Assignment3Search-3-kein-treffer-blatt-zuviel.world
+Assignment3Search-3-kein-treffer-leerstelle-fehlt.world
+Assignment3Search-17-lange-welt.world

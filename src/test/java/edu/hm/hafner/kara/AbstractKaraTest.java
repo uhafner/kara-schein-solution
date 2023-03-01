@@ -44,11 +44,19 @@ public abstract class AbstractKaraTest {
                 .isEqualTo(expected.getRepresentation(RepresentationMode.NONE));
     }
 
-    static void executeHeadlessWithWorld(final World start) {
-        Kara.setController(new TestKaraController(start));
+    static TestKaraController executeHeadlessWithWorld(final World start) {
+        var controller = new TestKaraController(start);
+        Kara.setController(controller);
+        return controller;
     }
 
     protected static Stream<Arguments> createStreamOfWorlds(final String... worlds) {
         return Stream.of(worlds).map(AbstractKaraTest::asGivenAndExpectedWorlds);
+    }
+
+    static class CountingController extends TestKaraController {
+        CountingController(final World world) {
+            super(world);
+        }
     }
 }
